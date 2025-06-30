@@ -13,6 +13,7 @@ export const compilerRouter = express.Router();
 compilerRouter.post("/run", (req, res) => {
     const { language, code, input }: RunData = req.body;
     const cleanedInput = input.replace(/^\s+/gm, '').replace(/\s+/g, ' ');
+    // console.log("ioeqdinqeod");
     if (!code || !code.length || !language.length) {
         return res.status(200).json({ success: false, message: "Code cannot be blank!" });
     }
